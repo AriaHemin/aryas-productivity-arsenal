@@ -1,6 +1,6 @@
-import { PanicModeStep1 } from "./panicModeStep1"
-import { PanicModeStep2 } from "./panicModestep2"
-import { PanicModeStep3 } from "./panicModeStep3"
+import { PanicModeStep1 } from "./steps/panicModeStep1"
+import { PanicModeStep2 } from "./steps/panicModestep2"
+import { PanicModeStep3 } from "./steps/panicModeStep3"
 import { useStepper } from "../../../hooks/useStepper"
 import {useState} from "react"
 
@@ -13,10 +13,12 @@ export function PanicModeStepper(){
         <PanicModeStep3  />
     ])
 
+    
+
     return(
         <div className="relative shrink-0 w-full h-full" >
             <div className="p-5" >
-                <div>{step}</div>
+                <div className="w-96 h-96" >{step}</div>
             </div>
             <div className="absolute bottom-0 right-0 " >
                 <div className="inline mx-2 " >{currentStep + 1}/{steps.length}</div>
