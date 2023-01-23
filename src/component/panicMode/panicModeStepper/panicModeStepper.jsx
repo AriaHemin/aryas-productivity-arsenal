@@ -2,14 +2,15 @@ import { PanicModeStep1 } from "./panicModeStep1"
 import { PanicModeStep2 } from "./panicModestep2"
 import { PanicModeStep3 } from "./panicModeStep3"
 import { useStepper } from "../../../hooks/useStepper"
-
+import {useState} from "react"
 
 export function PanicModeStepper(){
+    const [brainDumpList, setBrainDumpList] = useState([]);
 
     const { currentStep ,step, goNextStep , goPreviousStep , steps} = useStepper([
-        <PanicModeStep1/>,
-        <PanicModeStep2/>,
-        <PanicModeStep3/>
+        <PanicModeStep1 brainDumpList={brainDumpList} setBrainDumpList={setBrainDumpList} />,
+        <PanicModeStep2  />,
+        <PanicModeStep3  />
     ])
 
     return(

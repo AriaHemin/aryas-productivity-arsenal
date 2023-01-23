@@ -3,6 +3,8 @@ import Modal from '../modal/modal';
 import { PanicModeStepper } from "./panicModeStepper/panicModeStepper";
 
 function PanicMode(props){
+    
+
     const innerComp = <PanicModeStepper/>
     const [isModalActive, setIsModalActive] = useState(false);
     return(
